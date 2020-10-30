@@ -307,21 +307,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    '''
-        SOLUTION
-
-        CIPHER TEXT:
-        LM QE TX YE AG TX CT UI EW NC TX LZ EW UA IS PZ YV AP EW LM GQ WY AX
-        FT CJ MS QC AD AG TX LM DX NX SN PJ QS YV AP RI QS MH NO CV AX FV
-
-        PLAIN TEXT
-        th ek in gw as in hi sc ou nt in gh ou se co un ti ng ou th is mo ne
-        yt he qu ee nw vo wj do wp lo ur ea ti ng br ea da nd ho ne yz
-
-        the king was in his counting house counting out his money
-        the queen wvowjdowplour eating bread and honey z
-
-        REFERENCES
-        https://crypto.interactive-maths.com/hill-cipher.html
-    '''
