@@ -5,7 +5,9 @@
     SHIFT CIPHER - ENCRYPTION & DECRYPTION
 '''
 
-# DATA = "UZQSOVUOHXMOPVGPOZPEVSGZWSZOPFPESXUDBMETSXAIZVUEPHZHMDZSHZOWSFPAPPDTSVPQUZWYMXUZUHSXEPYEPOPDZSZUFPOMBZWPFUPZHMDJUDTMOHMQ"
+# DATA = ("UZQSOVUOHXMOPVGPOZPEVSGZWSZOPFPESXUDBMETSXAIZVUEPHZHMDZSHZOW"
+#         "SFPAPPDTSVPQUZWYMXUZUHSXEPYEPOPDZSZUFPOMBZWPFUPZHMDJUDTMOHMQ")
+
 DATA = "BEEAKFYDJXUQYHYJIQRYHTYJIQFBQDUYJIIKFUHCQD"
 
 alphabet_list = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j',
@@ -25,7 +27,7 @@ def decrypt(cipher_text):
         for char in cipher_text:
             decrypted_text += alphabet_list[(alphabet_list.index(char.lower()) - key) % 26]
 
-        print("For Key: " + str(key))
+        print("For Key: " + str(key).rjust(2), end=" ")
         print("Decrypted text: " + decrypted_text + "\n")
 
         decrypted_list.append(decrypted_text)
@@ -50,26 +52,27 @@ def encrypt(plain_text, key):
 def main():
     ''' main function '''
     print("\nAdvanced Cryptography (Shift Cipher)")
-    print("Brihat Ratna Bajracharya\n19/075\n---------")
+    print("Brihat Ratna Bajracharya\n19/075\n---------\n")
 
     cipher_text = input("Enter encrypted text (nospaces): ")
     if cipher_text == "":
-        print("Empty Cipher Text, Using Default Cipher Text")
+        print("Empty Cipher Text, Using Default Cipher Text\n")
         cipher_text = DATA
         plain = decrypt(cipher_text)
     else:
         plain = decrypt(cipher_text)
     print(plain)
 
-    plain_text = input("Enter text to encrypt (no spaces): ")
+    plain_text = input("\nEnter text to encrypt (no spaces): ")
     cipher_key = int(input("Enter encryption key (1-25): "))
     if cipher_key < 1 or cipher_key > 25:
         print("Invalid Key. Program will terminate...")
         return
 
     cipher = encrypt(plain_text, cipher_key)
-    print("Before encryption: " + plain_text.lower())
-    print("After encryption: " + cipher.upper())
+    print("\nBefore encryption: " + plain_text.lower())
+    print("After encryption:  " + cipher.upper())
+    print("\nDONE.")
 
 
 if __name__ == "__main__":
